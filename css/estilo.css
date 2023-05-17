@@ -54,9 +54,32 @@ header{
     font-family: "arial";
 }
 #video{
+    display: block;
     margin: 20px;
     width: 60%;
     height: 600px;
-    display: block;
     background-color: rgb(0, 0, 0);
+
+}
+#canalYutu{
+    display: flex;
+    width: 35%;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    float: right;
+    margin: 20px;
+}
+#containerone{
+    display: flex;
+    width: 100%;
+}
+#logoCanal{
+    width: 100px;
+    border-radius: 50%;
+    float: left;
+}
+#nombreCanal h3{
+    margin-top: 39px;
+    margin-left: 10px;
+    color: white;
 }
