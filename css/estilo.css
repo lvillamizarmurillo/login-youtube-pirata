@@ -65,8 +65,9 @@ header{
     display: flex;
     width: 100%;
     height: 100px;
-    background-color: rgb(0, 0, 0);
     margin: 20px;
+    border-bottom: solid rgb(46, 46, 46);
+    padding-bottom: 8px;
 }
 #logoCanal{
     width: 100px;
@@ -97,10 +98,11 @@ header{
 }
 #comentariosYutu{
     width: 100%;
-    height: 550px;
+    height: 540px;
     background-color: black;
-    margin-top: -10px;
+    margin-top: -11px;
     margin-left: 20px;
+    border-radius: 6px;
 }
 #descripcionYutu{
     width: 100%;
@@ -112,10 +114,9 @@ header{
 #titulo{
     width: 100%;
     height: 47px;
-    background-color: black;
     margin: 20px;
     margin-top: -10px;
-    border-bottom: solid white;
+    border-bottom: solid rgb(46, 46, 46);
 }
 #videosRelacionados{
     width: 100%;
@@ -124,4 +125,26 @@ header{
     margin: 20px;
     margin-top: -10px;
 }
-
+#logoCanal1{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#titulo1{
+    margin-top: 12px;
+    margin-left: 10px;
+    color: white;
+}
+.comenta h4{
+    padding-top: 30px;
+    margin-left: 10px;
+    color: white;
+}
+.comenta p{
+    margin-top: 6px;
+    margin-left: 10px;
+    color: white;
+}
+.comenta{
+    border-bottom: solid rgba(46, 46, 46, 0.63);
+}
