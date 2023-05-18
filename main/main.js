@@ -5,6 +5,7 @@ let canalYutuLogo = document.querySelector("#logoCanal1")
 let nombreCanlal = document.querySelector("#nombreCanal1")
 let tituloVideo = document.querySelector("#titulo1")
 let comentariosYutu = document.querySelector("#comentariosYutu")
+let descripcionYutu = document.querySelector("#descripcionYutu")
 const options = {
 	method: 'GET',
 	headers: {
@@ -24,6 +25,7 @@ async function buscarDatos(id){
     tituloVideo.innerHTML = result.contents[0].video.title
     canalYutu(result.contents[0])
     comentariosYutu1(result.contents[0].video.videoId)
+    describete(result.contents[0].video.videoId)
 }
 async function canalYutu(res){
     canalYutuLogo.setAttribute("src", res.video.author.avatar[0].url)
@@ -43,4 +45,13 @@ async function comentariosYutu1(videoId){
         </div>
         `
     }
+}
+async function describete(videoId){
+    const url = `https://youtube138.p.rapidapi.com/video/details/?id=${videoId}&hl=en&gl=US`;
+    const response = await fetch(url, options);
+	const result = await response.json();
+	descripcionYutu.innerHTML = `
+    <h4>Descripción: </h4>
+    <p>${result.description}</p>
+    `
 }

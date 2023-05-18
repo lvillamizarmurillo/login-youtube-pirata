@@ -110,6 +110,7 @@ header{
     background-color: black;
     margin: 20px;
     margin-top: 10px;
+    border-radius: 6px;
 }
 #titulo{
     width: 100%;
@@ -147,4 +148,14 @@ header{
 }
 .comenta{
     border-bottom: solid rgba(46, 46, 46, 0.63);
+}
+#descripcionYutu h4{
+    color: white;
+    margin-top: 6px;
+    margin-left: 10px;
+}
+#descripcionYutu p{
+    color: white;
+    margin-top: 6px;
+    margin-left: 10px;
 }
