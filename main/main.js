@@ -17,6 +17,6 @@ async function buscarDatos(id){
     let url = `https://youtube138.p.rapidapi.com/search/?q=${id}&hl=en&gl=US`;
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result.contents[0].video.videoId);
+    console.log(result);
     videoYutu.setAttribute("src", `https://www.youtube.com/embed/${result.contents[0].video.videoId}`)
 }
