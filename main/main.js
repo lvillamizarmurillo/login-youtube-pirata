@@ -6,6 +6,7 @@ let nombreCanlal = document.querySelector("#nombreCanal1")
 let tituloVideo = document.querySelector("#titulo1")
 let comentariosYutu = document.querySelector("#comentariosYutu")
 let descripcionYutu = document.querySelector("#descripcionYutu")
+let videosRelacionados = document.querySelector(".videosRelacionados")
 const options = {
 	method: 'GET',
 	headers: {
@@ -26,6 +27,7 @@ async function buscarDatos(id){
     canalYutu(result.contents[0])
     comentariosYutu1(result.contents[0].video.videoId)
     describete(result.contents[0].video.videoId)
+    videosRelacionadosYutu(result.contents[0].video.videoId)
 }
 async function canalYutu(res){
     canalYutuLogo.setAttribute("src", res.video.author.avatar[0].url)
@@ -54,4 +56,17 @@ async function describete(videoId){
     <h4>Descripción: </h4>
     <p>${result.description}</p>
     `
+}
+async function videosRelacionadosYutu(videoId4){
+    const url = `https://youtube138.p.rapidapi.com/video/related-contents/?id=${videoId4}&hl=en&gl=US`;
+    const response = await fetch(url, options);
+	const result = await response.json();
+    videosRelacionados.innerHTML = ``
+    for (let i=0;i<3;i++){
+        videosRelacionados.innerHTML += `
+        <div class="videos-relate">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${result.contents[i].video.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        `
+    }
 }
